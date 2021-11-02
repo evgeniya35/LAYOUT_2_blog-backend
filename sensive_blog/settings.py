@@ -21,10 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'debug_toolbar',
-
-    'blog',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -96,12 +94,15 @@ STATIC_URL = os.getenv('STATIC_URL', '/static/')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
-MEDIA_ROOT = os.getenv("MEDIA_ROOT", os.path.join(BASE_DIR, 'media'))
-
 STATIC_ROOT = os.getenv("STATIC_ROOT")
+
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", os.path.join(BASE_DIR, 'media'))
 
 MEDIA_URL = os.getenv('MEDIA_URL', '/media/')
 
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+print('STATIC_URL', STATIC_URL)
+print('STATICFILES_DIRS', STATICFILES_DIRS)
+print('STATIC_ROOT', STATIC_ROOT)
